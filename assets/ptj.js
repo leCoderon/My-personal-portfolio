@@ -1,179 +1,290 @@
-const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle");
-navClose = document.getElementById("nav-close");
-if (navToggle) {
+/*==============================================================================
+  Portfolio — Ismael Camara
+  Interactions : navigation, accordéon, onglets, modales, thème, formulaire
+==============================================================================*/
+
+/*==================== MENU MOBILE ====================*/
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
+
+if (navToggle && navMenu) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu");
   });
 }
 
-if (navClose) {
+if (navClose && navMenu) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu");
   });
 }
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link");
+const navLinks = document.querySelectorAll(".nav__link");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navMenu) navMenu.classList.remove("show-menu");
+  });
+});
 
-function linkAction() {
-  const navMenu = document.getElementById("nav-menu");
-  // When we click on each nav__link, we remove the show-menu class
-  navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/*======================= ACCORD SKILLS ======================*/
-
-const skillsContent = document.getElementsByClassName("skills__content"),
-  skillsHeader = document.querySelectorAll(".skills__header");
+/*==================== ACCORDÉON COMPÉTENCES ====================*/
+const skillsContent = document.querySelectorAll(".skills__content");
+const skillsHeader = document.querySelectorAll(".skills__header");
 
 function toggleSkills() {
-  let itemClass = this.parentNode.className;
+  const parent = this.parentNode;
+  const isClosed = parent.classList.contains("skills__close");
 
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = "skills__content skills__close";
-  }
-  if (itemClass === "skills__content skills__close") {
-    this.parentNode.className = "skills__content skills__open";
+  skillsContent.forEach((content) => {
+    content.classList.remove("skills__open");
+    content.classList.add("skills__close");
+    const header = content.querySelector(".skills__header");
+    if (header) header.setAttribute("aria-expanded", "false");
+  });
+
+  if (isClosed) {
+    parent.classList.remove("skills__close");
+    parent.classList.add("skills__open");
+    this.setAttribute("aria-expanded", "true");
   }
 }
 
-skillsHeader.forEach((el) => {
-  el.addEventListener("click", toggleSkills);
+skillsHeader.forEach((header) => {
+  header.addEventListener("click", toggleSkills);
 });
 
-/*============== Qualification Skills ===============*/
+/*==================== ONGLETS PARCOURS ====================*/
+const tabs = document.querySelectorAll("[data-target]");
+const tabContents = document.querySelectorAll("[data-content]");
 
-/*const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
-        tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
-        })
-        target.classList.add('qualification__active')
-        tab.forEach(tab =>{
-            tab.classList.remove('qualification__active')
-        })
-        tab.classList.add('qualification__active')
-    })
-})      
-*/
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.target);
+    if (!target) return;
 
-/*======================= Services Modal ===================*/
-const modalViews = document.querySelectorAll(".services__modal"),
-  modalBtns = document.querySelectorAll(".services__button"),
-  modalCloses = document.querySelectorAll(".services__modal-close");
-
-let modal = function (modalClick) {
-  modalViews[modalClick].classList.add("active-modal");
-};
-
-modalBtns.forEach((modalBtn, i) => {
-  modalBtn.addEventListener("click", () => {
-    modal(i);
-  });
-});
-
-modalCloses.forEach((modalClose) => {
-  modalClose.addEventListener("click", () => {
-    modalViews.forEach((modalView) => {
-      modalView.classList.remove("active-modal");
+    tabs.forEach((item) => {
+      item.classList.remove("qualification__active");
+      item.setAttribute("aria-selected", "false");
     });
+
+    tabContents.forEach((content) => {
+      content.classList.remove("qualification__active");
+      content.hidden = true;
+    });
+
+    tab.classList.add("qualification__active");
+    tab.setAttribute("aria-selected", "true");
+    target.classList.add("qualification__active");
+    target.hidden = false;
   });
 });
 
-/*======================= Portfolio Swiper ===================*/
-var swiper = new Swiper(".portfolio__container", {
-  cssMode: true,
-  loop: true,
+/*==================== MODALES PARCOURS ====================*/
+const modalButtons = document.querySelectorAll(".services__button");
+const modalCloses = document.querySelectorAll(".services__modal-close");
+let lastFocusedElement = null;
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+function closeAllModals() {
+  document.querySelectorAll(".services__modal.active-modal").forEach((modal) => {
+    modal.classList.remove("active-modal");
+  });
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+}
+
+modalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".qualification__card");
+    const modal = card ? card.querySelector(".services__modal") : null;
+    if (!modal) return;
+
+    lastFocusedElement = button;
+    modal.classList.add("active-modal");
+
+    const closeButton = modal.querySelector(".services__modal-close");
+    if (closeButton) closeButton.focus();
+  });
 });
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+modalCloses.forEach((closeButton) => {
+  closeButton.addEventListener("click", closeAllModals);
+});
+
+document.querySelectorAll(".services__modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeAllModals();
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeAllModals();
+});
+
+/*==================== CARROUSEL PROJETS ====================*/
+const portfolioContainer = document.querySelector(".portfolio__container");
+
+if (portfolioContainer && typeof Swiper !== "undefined") {
+  const slides = portfolioContainer.querySelectorAll(".swiper-slide");
+  const isSingleSlide = slides.length <= 1;
+
+  new Swiper(portfolioContainer, {
+    cssMode: true,
+    loop: !isSingleSlide,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  if (isSingleSlide) portfolioContainer.classList.add("single-slide");
+}
+
+/*==================== LIEN ACTIF AU DÉFILEMENT ====================*/
 const sections = document.querySelectorAll("section[id]");
+const navMenuLinks = document.querySelectorAll(".nav__menu a[href^='#']");
+const linkBySectionId = {};
 
-function scrollActive() {
-  const scrollY = window.pageYOffset;
+navMenuLinks.forEach((link) => {
+  const id = link.getAttribute("href").slice(1);
+  if (id) linkBySectionId[id] = link;
+});
 
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+if ("IntersectionObserver" in window && sections.length) {
+  const activeLinkObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const link = linkBySectionId[entry.target.id];
+        if (!link) return;
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
-    }
-  });
+        navMenuLinks.forEach((item) => item.classList.remove("active-link"));
+        link.classList.add("active-link");
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" },
+  );
+
+  sections.forEach((section) => activeLinkObserver.observe(section));
 }
-window.addEventListener("scroll", scrollActive);
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader() {
-  const nav = document.getElementById("header");
-  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-  if (this.scrollY >= 80) nav.classList.add("scroll-header");
-  else nav.classList.remove("scroll-header");
+/*==================== EN-TÊTE ET BOUTON RETOUR EN HAUT ====================*/
+const header = document.getElementById("header");
+const scrollUpButton = document.getElementById("scroll-up");
+
+function onScroll() {
+  const scrollY = window.scrollY;
+
+  if (header) header.classList.toggle("scroll-header", scrollY >= 80);
+  if (scrollUpButton) scrollUpButton.classList.toggle("show-scroll", scrollY >= 560);
 }
-window.addEventListener("scroll", scrollHeader);
 
-/*==================== SHOW SCROLL up ====================*/
-function scrollUp() {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-  if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+/*==================== APPARITION AU DÉFILEMENT ====================*/
+const revealTargets = document.querySelectorAll(
+  ".section__kicker, .section__title, .section__subtitle, .home__content, .about__container, .skills__column, .qualification__container, .portfolio__container, .contact__info, .contact__form",
+);
+
+if ("IntersectionObserver" in window && revealTargets.length) {
+  revealTargets.forEach((element) => element.classList.add("reveal"));
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+  );
+
+  revealTargets.forEach((element) => revealObserver.observe(element));
 }
-window.addEventListener("scroll", scrollUp);
 
-/*==================== DARK LIGHT THEME ====================*/
+/*==================== THÈME CLAIR / SOMBRE ====================*/
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
-// Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
+const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun");
 
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme,
-  );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme,
-  );
+if (themeButton) {
+  if (selectedTheme) {
+    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
+    themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](iconTheme);
+  }
+
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+    localStorage.setItem("selected-theme", getCurrentTheme());
+    localStorage.setItem("selected-icon", getCurrentIcon());
+  });
 }
 
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
+/*==================== FORMULAIRE DE CONTACT (FORMSPREE) ====================*/
+const contactForm = document.getElementById("contact-form");
+const contactStatus = document.getElementById("contact-status");
+const contactSubmit = document.getElementById("contact-submit");
+
+if (contactForm && contactStatus && contactSubmit) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const action = contactForm.getAttribute("action") || "";
+    if (action.includes("VOTRE_ID")) {
+      contactStatus.textContent =
+        "Formulaire non configuré : remplacez « VOTRE_ID » par votre identifiant Formspree.";
+      contactStatus.className = "contact__status is-error";
+      return;
+    }
+
+    const originalContent = contactSubmit.innerHTML;
+    contactSubmit.disabled = true;
+    contactSubmit.textContent = "Envoi en cours…";
+    contactStatus.textContent = "";
+    contactStatus.className = "contact__status";
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Requête refusée");
+
+      contactForm.reset();
+      contactStatus.textContent = "Merci ! Votre message a bien été envoyé.";
+      contactStatus.className = "contact__status is-success";
+    } catch (error) {
+      contactStatus.textContent =
+        "Oups, l'envoi a échoué. Écrivez-moi directement à camara9ismael@gmail.com.";
+      contactStatus.className = "contact__status is-error";
+    } finally {
+      contactSubmit.disabled = false;
+      contactSubmit.innerHTML = originalContent;
+    }
+  });
+}
+
+/*==================== ANNÉE DU PIED DE PAGE ====================*/
+const yearElement = document.getElementById("year");
+if (yearElement) yearElement.textContent = new Date().getFullYear();

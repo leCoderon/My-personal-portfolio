@@ -1,86 +1,125 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+
+  <title>Ismael Camara — Développeur Full Stack Web | Laravel & PHP</title>
+  <meta name="description"
+    content="Portfolio d'Ismael Camara, développeur full stack web basé à Abidjan (Côte d'Ivoire) : PHP, Laravel, SQL, HTML, CSS, JavaScript. Découvrez mes projets et contactez-moi." />
+  <meta name="author" content="Ismael Camara" />
+  <meta name="theme-color" content="#4b4bd6" />
+  <link rel="canonical" href="https://lecoderon.github.io/My-personal-portfolio/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ismael Camara" />
+  <meta property="og:title" content="Ismael Camara — Développeur Full Stack Web" />
+  <meta property="og:description"
+    content="Développeur full stack web spécialisé en PHP, Laravel et SQL. Découvrez mes projets et contactez-moi." />
+  <meta property="og:image" content="https://lecoderon.github.io/My-personal-portfolio/preview.png" />
+  <meta property="og:url" content="https://lecoderon.github.io/My-personal-portfolio/" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ismael Camara — Développeur Full Stack Web" />
+  <meta name="twitter:description"
+    content="Développeur full stack web spécialisé en PHP, Laravel et SQL. Découvrez mes projets et contactez-moi." />
+  <meta name="twitter:image" content="https://lecoderon.github.io/My-personal-portfolio/preview.png" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/newcss.css" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
 </head>
 
-<body oncontextmenu="return false">
+<body>
+  <a class="skip-link" href="#home">Aller au contenu principal</a>
+
   <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">Ismael Camara</a>
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#home" class="nav__logo">Ismael<span>.</span></a>
+
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list grid">
           <li class="nav__item">
             <a href="#home" class="nav__link active-link">
-              <i class="uil uil-estate nav__icon"></i>Home
+              <i class="uil uil-estate nav__icon" aria-hidden="true"></i>Accueil
             </a>
           </li>
           <li class="nav__item">
             <a href="#about" class="nav__link">
-              <i class="uil uil-user nav__icon"></i>About
+              <i class="uil uil-user nav__icon" aria-hidden="true"></i>À propos
             </a>
           </li>
           <li class="nav__item">
             <a href="#skills" class="nav__link">
-              <i class="uil uil-file-alt nav__icon"></i>Skills
+              <i class="uil uil-file-alt nav__icon" aria-hidden="true"></i>Compétences
             </a>
           </li>
           <li class="nav__item">
             <a href="#qualification" class="nav__link">
-              <i class="uil uil-briefcase-alt nav__icon"></i>Qualification
+              <i class="uil uil-briefcase-alt nav__icon" aria-hidden="true"></i>Parcours
             </a>
           </li>
           <li class="nav__item">
             <a href="#portfolio" class="nav__link">
-              <i class="uil uil-scenery nav__icon"></i>Projects
+              <i class="uil uil-scenery nav__icon" aria-hidden="true"></i>Projets
             </a>
           </li>
           <li class="nav__item">
             <a href="#contact" class="nav__link">
-              <i class="uil uil-message nav__icon"></i>Contact-Me
+              <i class="uil uil-message nav__icon" aria-hidden="true"></i>Contact
             </a>
           </li>
         </ul>
-        <i class="uil uil-times nav__close" id="nav-close"></i>
-      </div>
-      <div class="nav__btns">
-        <!-- Theme change button -->
-        <i class="uil uil-moon change-theme" id="theme-button"></i>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="uil uil-apps"></i>
-        </div>
+        <button type="button" class="nav__close" id="nav-close" aria-label="Fermer le menu">
+          <i class="uil uil-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="nav__btns">
+        <button type="button" class="change-theme" id="theme-button" aria-label="Basculer le thème clair / sombre">
+          <i class="uil uil-moon" aria-hidden="true"></i>
+        </button>
+
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+          <i class="uil uil-apps" aria-hidden="true"></i>
+        </button>
       </div>
     </nav>
   </header>
-  <!-- main-->
 
   <main class="main">
-    <!--========================= Home =====================-->
-
+    <!--========================= Accueil =====================-->
     <section class="home section" id="home">
       <div class="home__container container grid">
         <div class="home__content grid">
           <div class="home__social">
-            <a href="http://www.linkedin.com/in/ismaël-camara-stage-frontend-developpeur-webdesigner-abidjan"
-              target="_blank" class="home__social-icon">
-              <i class="uil uil-linkedin-alt home__icon"></i>
+            <a href="https://www.linkedin.com/in/isma%C3%ABl-camara-stage-developpeur-web-abidjan" target="_blank"
+              rel="noopener" class="home__social-icon" aria-label="Profil LinkedIn d'Ismael Camara">
+              <i class="uil uil-linkedin-alt" aria-hidden="true"></i>
             </a>
 
-            <a href="https://github.com/leCoderon" target="_blank" class="home__social-icon">
-              <i class="uil uil-github-alt home__icon"></i>
+            <a href="https://github.com/leCoderon" target="_blank" rel="noopener" class="home__social-icon"
+              aria-label="Profil GitHub d'Ismael Camara">
+              <i class="uil uil-github-alt" aria-hidden="true"></i>
             </a>
           </div>
+
           <div class="home__img">
-            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <mask id="mask0" mask-type="alpha">
                 <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
                       130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
@@ -92,263 +131,407 @@
                       165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                       129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                      -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                <image class="home__blob-img" x="-79" y="-46" xlink:href="assets/img/Pro.jpg" />
+                <image class="home__blob-img" x="-79" y="-46" href="assets/img/Pro.jpg" />
               </g>
             </svg>
           </div>
-          <div class="home__data">
-            <h1 class="home__title">Hi, I'm Ismael Camara</h1>
-            <h3 class="home__subtitle">
-              A Full Stack Web Developper
-            </h3>
-            <p class="home__description">
-              I successfully completed my academic program with a Bachelor's degree in Application Development and
-              E-Services at the <strong>Virtual University of Côte d'Ivoire.</strong>,
 
+          <div class="home__data">
+            <span class="home__kicker">Bonjour, je suis</span>
+            <h1 class="home__title">Ismael Camara</h1>
+            <h2 class="home__subtitle">Développeur Full Stack Web</h2>
+            <p class="home__description">
+              Titulaire d'une licence en Développement d'Applications et E-Services de
+              l'<strong>Université Virtuelle de Côte d'Ivoire</strong>, je conçois des applications web robustes et
+              évolutives avec PHP, Laravel et SQL.
             </p>
-            <a href="#contact" class="button button--flex">
-              Contact me now<i class="uil uil-message button__icon"></i>
-            </a>
+
+            <div class="home__actions">
+              <a href="#contact" class="button button--flex">
+                Me contacter<i class="uil uil-message button__icon" aria-hidden="true"></i>
+              </a>
+              <a href="#portfolio" class="button button--outline button--flex">
+                Voir mes projets<i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="home__scroll">
           <a href="#about" class="home__scroll-button button--flex">
-            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-            <span class="home__scroll-name">Scroll down</span>
-            <i class="uil uil-arrow-down home__scroll-arrow"></i>
+            <i class="uil uil-mouse-alt home__scroll-mouse" aria-hidden="true"></i>
+            <span class="home__scroll-name">Défiler</span>
+            <i class="uil uil-arrow-down home__scroll-arrow" aria-hidden="true"></i>
           </a>
         </div>
       </div>
     </section>
 
-    <!--======================= About========================-->
-
+    <!--======================= À propos ========================-->
     <section class="about section" id="about">
-      <h2 class="section__title"><i class="fa-solid fa-user-tie"></i> About Me</h2>
-      <span class="section__subtitle">My Opening Statement</span>
+      <span class="section__kicker">Qui suis-je</span>
+      <h2 class="section__title"><i class="uil uil-user-check" aria-hidden="true"></i> À propos de moi</h2>
+      <p class="section__subtitle">Présentation</p>
 
       <div class="about__container container grid">
-        <img src="assets\img\Pro.jpg" alt="" class="about__img" />
+        <img src="assets/img/Pro.jpg" alt="Portrait d'Ismael Camara, développeur full stack web" class="about__img"
+          width="300" height="300" loading="lazy" decoding="async" />
 
         <div class="about__data">
           <p class="about__description">
-            Holder of a degree in Application Development and E-Services from the Virtual University of Côte d'Ivoire, I
-            have extensive expertise in web development, particularly in HTML, CSS, PHP, and SQL. Furthermore, my
-            proficiency in the Laravel framework enables me to design robust and scalable solutions that cater to the
-            specific needs of your clients.
+            Diplômé en Développement d'Applications et E-Services de l'Université Virtuelle de Côte d'Ivoire, je
+            maîtrise le développement web, notamment HTML, CSS, PHP et SQL. Ma maîtrise du framework Laravel me permet
+            de concevoir des solutions robustes et évolutives, adaptées aux besoins réels de chaque projet.
           </p>
 
           <div class="about__info">
-            <div>
-              <span class="about__info-title">00+</span>
-              <span class="about__info-name">Aggregate <br />CGPA</span>
+            <div class="about__info-item">
+              <span class="about__info-title">15+</span>
+              <span class="about__info-name">Projets<br />réalisés</span>
             </div>
 
-            <div>
-              <span class="about__info-title">00+</span>
-              <span class="about__info-name">Frontend <br />
-                Projects</span>
+            <div class="about__info-item">
+              <span class="about__info-title">10+</span>
+              <span class="about__info-name">Technologies<br />maîtrisées</span>
             </div>
 
-            <div>
+            <div class="about__info-item">
               <span class="about__info-title">03+</span>
-              <span class="about__info-name">Years <br />experience</span>
+              <span class="about__info-name">Années<br />d'expérience</span>
             </div>
           </div>
 
           <div class="about__buttons">
-            <a download="" href="assets\Camara_Ismael_CV.pdf" class="button button--flex">
-              Download CV<i class="fas fa-download button__icon"></i>
+            <a download href="assets/Camara_Ismael_CV.pdf" class="button button--flex">
+              Télécharger le CV<i class="uil uil-download-alt button__icon" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!--===================== SKILLS =====================-->
-
+    <!--===================== Compétences =====================-->
     <section class="skills section" id="skills">
-      <h2 class="section__title"><i class="fas fa-gears"></i> Skills</h2>
-      <span class="section__subtitle">My technical expertise </span>
+      <span class="section__kicker">Mon savoir-faire</span>
+      <h2 class="section__title"><i class="uil uil-cog" aria-hidden="true"></i> Compétences</h2>
+      <p class="section__subtitle">Mon expertise technique</p>
 
       <div class="skills__container container grid">
-        <div>
-          <!--==================== Skill 1 =================-->
-          <div class="skills__content skills__open">
-            <div class="skills__header">
-              <i class="fas fa-pencil-ruler skills__icon"></i>
-
-              <div>
-                <h1 class="skills__title">Programming Languages</h1>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
+        <div class="skills__column">
+          <!--==================== Compétence 1 =================-->
+          <article class="skills__content skills__open">
+            <button type="button" class="skills__header" aria-expanded="true">
+              <i class="uil uil-pen skills__icon" aria-hidden="true"></i>
+              <h3 class="skills__title">Langages de programmation</h3>
+              <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+            </button>
 
             <div class="skills__list grid">
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">PHP</h3>
-                  <span class="skills__nuber">65%</span>
+                  <h4 class="skills__name">PHP</h4>
+                  <span class="skills__number">65%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__html"></span>
+                  <span class="skills__percentage" style="--w: 65%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">Laravel</h3>
-                  <span class="skills__nuber">55%</span>
+                  <h4 class="skills__name">Laravel</h4>
+                  <span class="skills__number">55%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__css"></span>
+                  <span class="skills__percentage" style="--w: 55%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">SQL</h3>
-                  <span class="skills__nuber">45%</span>
+                  <h4 class="skills__name">SQL</h4>
+                  <span class="skills__number">45%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__js"></span>
+                  <span class="skills__percentage" style="--w: 45%"></span>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!--==================== Skill 2 =================-->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="fas fa-code skills__icon"></i>
-
-              <div>
-                <h1 class="skills__title">IT Constructs</h1>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
+          <!--==================== Compétence 2 =================-->
+          <article class="skills__content skills__close">
+            <button type="button" class="skills__header" aria-expanded="false">
+              <i class="uil uil-brackets-curly skills__icon" aria-hidden="true"></i>
+              <h3 class="skills__title">Concepts informatiques</h3>
+              <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+            </button>
 
             <div class="skills__list grid">
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">Algorithms</h3>
-                  <span class="skills__nuber">70%</span>
+                  <h4 class="skills__name">Algorithmes</h4>
+                  <span class="skills__number">70%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__php"></span>
+                  <span class="skills__percentage" style="--w: 70%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">OOP (Object-Oriented Programming)</h3>
-                  <span class="skills__nuber">60%</span>
+                  <h4 class="skills__name">POO (Programmation orientée objet)</h4>
+                  <span class="skills__number">60%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__node"></span>
+                  <span class="skills__percentage" style="--w: 60%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">OS (Operating System)</h3>
-                  <span class="skills__nuber">65%</span>
+                  <h4 class="skills__name">Systèmes d'exploitation</h4>
+                  <span class="skills__number">65%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__firebase"></span>
+                  <span class="skills__percentage" style="--w: 65%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">DBMS (DataBase Management System)</h3>
-                  <span class="skills__nuber">50%</span>
+                  <h4 class="skills__name">SGBD (Système de gestion de base de données)</h4>
+                  <span class="skills__number">50%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__python"></span>
+                  <span class="skills__percentage" style="--w: 50%"></span>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div>
-          <!--==================== Skill 3 =================-->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="fas fa-swatchbook skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Technologies</h1>
-              </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
+        <div class="skills__column">
+          <!--==================== Compétence 3 =================-->
+          <article class="skills__content skills__close">
+            <button type="button" class="skills__header" aria-expanded="false">
+              <i class="uil uil-swatchbook skills__icon" aria-hidden="true"></i>
+              <h3 class="skills__title">Technologies</h3>
+              <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+            </button>
 
             <div class="skills__list grid">
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">HTML</h3>
-                  <span class="skills__nuber">85%</span>
+                  <h4 class="skills__name">HTML</h4>
+                  <span class="skills__number">85%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__figma"></span>
+                  <span class="skills__percentage" style="--w: 85%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">CSS</h3>
-                  <span class="skills__nuber">70%</span>
+                  <h4 class="skills__name">CSS</h4>
+                  <span class="skills__number">70%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__sketch"></span>
+                  <span class="skills__percentage" style="--w: 70%"></span>
                 </div>
               </div>
+
               <div class="skills__data">
                 <div class="skills__titles">
-                  <h3 class="skills__name">JavaScript</h3>
-                  <span class="skills__nuber">60%</span>
+                  <h4 class="skills__name">JavaScript</h4>
+                  <span class="skills__number">60%</span>
                 </div>
                 <div class="skills__bar">
-                  <span class="skills__percentage skills__photoshop"></span>
+                  <span class="skills__percentage" style="--w: 60%"></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!--==================== Compétence 4 =================-->
+          <article class="skills__content skills__close">
+            <button type="button" class="skills__header" aria-expanded="false">
+              <i class="uil uil-tools skills__icon" aria-hidden="true"></i>
+              <h3 class="skills__title">Outils</h3>
+              <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+            </button>
+
+            <div class="skills__list grid">
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h4 class="skills__name">Figma</h4>
+                  <span class="skills__number">55%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage" style="--w: 55%"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h4 class="skills__name">Visual Studio Code</h4>
+                  <span class="skills__number">60%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage" style="--w: 60%"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h4 class="skills__name">Git / GitHub</h4>
+                  <span class="skills__number">60%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage" style="--w: 60%"></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== Parcours ==================-->
+    <section class="qualification section" id="qualification">
+      <span class="section__kicker">Mon parcours</span>
+      <h2 class="section__title"><i class="uil uil-award" aria-hidden="true"></i> Parcours</h2>
+      <p class="section__subtitle">Formation et distinctions</p>
+
+      <div class="qualification__container container">
+        <div class="qualification__tabs" role="tablist" aria-label="Formation et distinctions">
+          <button type="button" class="qualification__button qualification__active" data-target="#education" role="tab"
+            aria-selected="true" aria-controls="education">
+            <i class="uil uil-graduation-cap qualification__icon" aria-hidden="true"></i>Formation
+          </button>
+
+          <button type="button" class="qualification__button" data-target="#awards" role="tab" aria-selected="false"
+            aria-controls="awards">
+            <i class="uil uil-trophy qualification__icon" aria-hidden="true"></i>Distinctions
+          </button>
+        </div>
+
+        <div class="qualification__sections">
+          <!--====== Formation ======-->
+          <div class="qualification__content qualification__active" data-content id="education" role="tabpanel">
+            <div class="qualification__data">
+              <div class="qualification__card">
+                <h3 class="qualification__title">Baccalauréat série scientifique</h3>
+                <span class="qualification__subtitle">Collège Sainte Foi d'Abidjan — Abidjan, Côte d'Ivoire</span>
+                <div class="qualification__calender">
+                  <i class="uil uil-calendar-alt" aria-hidden="true"></i>
+                  2019 — 2020
+                </div>
+
+                <button type="button" class="button button--link button--flex button--small services__button"
+                  aria-haspopup="dialog">
+                  Voir plus
+                  <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                </button>
+
+                <div class="services__modal" role="dialog" aria-modal="true" aria-label="Résumé de la Terminale">
+                  <div class="services__modal-content">
+                    <h4 class="services__modal-title">Résumé de la Terminale</h4>
+                    <button type="button" class="services__modal-close" aria-label="Fermer">
+                      <i class="uil uil-times" aria-hidden="true"></i>
+                    </button>
+                    <ul class="services__modal-services grid">
+                      <li class="services__modal-service">
+                        <i class="uil uil-check-circle services__modal-icon" aria-hidden="true"></i>
+                        <p>Matières étudiées : Sciences, Mathématiques, Anglais, Histoire…</p>
+                      </li>
+                      <li class="services__modal-service">
+                        <i class="uil uil-check-circle services__modal-icon" aria-hidden="true"></i>
+                        <p>Obtention du baccalauréat série scientifique.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="qualification__marker">
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+              </div>
+            </div>
+
+            <div class="qualification__data qualification__data--reverse">
+              <div class="qualification__marker">
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+              </div>
+
+              <div class="qualification__card">
+                <h3 class="qualification__title">Licence en Développement d'Applications et E-Services</h3>
+                <span class="qualification__subtitle">Université Virtuelle de Côte d'Ivoire — Abidjan, Côte d'Ivoire</span>
+                <div class="qualification__calender">
+                  <i class="uil uil-calendar-alt" aria-hidden="true"></i>
+                  2021 — 2023
+                </div>
+
+                <button type="button" class="button button--link button--flex button--small services__button"
+                  aria-haspopup="dialog">
+                  Voir plus
+                  <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                </button>
+
+                <div class="services__modal" role="dialog" aria-modal="true" aria-label="Résumé de la Licence">
+                  <div class="services__modal-content">
+                    <h4 class="services__modal-title">Résumé de la Licence</h4>
+                    <button type="button" class="services__modal-close" aria-label="Fermer">
+                      <i class="uil uil-times" aria-hidden="true"></i>
+                    </button>
+                    <ul class="services__modal-services grid">
+                      <li class="services__modal-service">
+                        <i class="uil uil-check-circle services__modal-icon" aria-hidden="true"></i>
+                        <p>Développement d'applications web : PHP, Laravel, SQL, JavaScript, CSS, HTML, Bootstrap</p>
+                      </li>
+                      <li class="services__modal-service">
+                        <i class="uil uil-check-circle services__modal-icon" aria-hidden="true"></i>
+                        <p>Algorithmes, Systèmes d'exploitation, SGBD (Système de gestion de base de données)</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!--==================== Skill 4 =================-->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="fa-solid fa-toolbox skills__icon"></i>
-              <div>
-                <h1 class="skills__title">Tools</h1>
+
+          <!--====== Distinctions ======-->
+          <div class="qualification__content" data-content id="awards" role="tabpanel" hidden>
+            <div class="qualification__data">
+              <div class="qualification__card">
+                <h3 class="qualification__title">Diplôme du meilleur étudiant — 1re et 2e année de Licence</h3>
+                <span class="qualification__subtitle">Université Virtuelle de Côte d'Ivoire — Abidjan, Côte d'Ivoire</span>
+                <div class="qualification__calender">
+                  <i class="uil uil-calendar-alt" aria-hidden="true"></i>
+                  2021 — 2022
+                </div>
               </div>
 
-              <i class="uil uil-angle-down skills__arrow"></i>
+              <div class="qualification__marker">
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+              </div>
             </div>
 
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Figma</h3>
-                  <span class="skills__nuber">55%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__figma"></span>
-                </div>
+            <div class="qualification__data qualification__data--reverse">
+              <div class="qualification__marker">
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
               </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Visual Studio Code</h3>
-                  <span class="skills__nuber">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__sketch"></span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Git/Github</h3>
-                  <span class="skills__nuber">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__photoshop"></span>
+
+              <div class="qualification__card">
+                <h3 class="qualification__title">Prix d'excellence — 1er de la promotion 2021-2022</h3>
+                <span class="qualification__subtitle">Université Virtuelle de Côte d'Ivoire — Abidjan, Côte d'Ivoire</span>
+                <div class="qualification__calender">
+                  <i class="uil uil-calendar-alt" aria-hidden="true"></i>
+                  2021 — 2022
                 </div>
               </div>
             </div>
@@ -357,380 +540,297 @@
       </div>
     </section>
 
-    <!--==================== Qualifications ==================-->
-
-    <section class="qualification__section service__section" id="qualification">
-      <h2 class="section__title">Qualification</h2>
-      <span class="section__subtitle">My personal journey</span>
-
-      <div class="qualification__container container grid services__container">
-        <div class="qualification__tabs">
-          <div class="qualification__button button--flex qualification__active" data-target="#education">
-            <i class="uil uil-graduation-cap qualification__icon"></i>
-            Education
-          </div>
-        </div>
-
-        <div class="qualification__sections">
-          <!--====== Qualification Content 1 ======-->
-          <div class="qualification__content qualifiation__active services__content" data-content id="education">
-            <!--====== Qualification 1 ======-->
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">Baccalaureate in Scientific Series</h3>
-                <span class="qualification__subtitle">Sainte Foi Collge of Abidjan<br /> Abidjan, Côte d'Ivoire</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i>
-                  2019 - 2020
-                </div>
-                <span class="button button--flex button--small button--link services__button">
-                  View More
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </span>
-                <div class="services__modal">
-                  <div class="services__modal-content">
-                    <h4 class="services__modal-title">
-                      12th Grade Summary :
-                    </h4>
-                    <i class="uil uil-times services__modal-close"></i>
-                    <ul class="services__modal-services grid">
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p>
-                          Subjects studied: Science, Maths, English,
-                          History...
-                        </p>
-                      </li>
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p>Scored **</p>
-                      </li>
-                      <!-- <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p></p>
-                      </li> -->
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-            </div>
-
-            <!--====== Qualification 2 ======-->
-            <div class="qualification__data">
-              <div></div>
-
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-              <div>
-                <h3 class="qualification__title">Bachelor's degree in Application Development and E-Services.</h3>
-                <span class="qualification__subtitle">Virtual University of Côte d'Ivoire<br /> Abidjan, Côte
-                  d'Ivoire</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i>
-                  2021 - 2023
-                </div>
-                <span class="button button--flex button--small button--link services__button">
-                  View More
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </span>
-                <div class="services__modal">
-                  <div class="services__modal-content">
-                    <h4 class="services__modal-title">
-                      Bachelor's Degree Summary :
-                    </h4>
-                    <i class="uil uil-times services__modal-close"></i>
-                    <ul class="services__modal-services grid">
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p>
-                          &nbsp; Web Application Development: PHP, Laravel, sql, JavaScript, CSS, HTML, Bootstrap
-                        </p>
-                      </li>
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p> &nbsp; Algorithms, OS, DBMS (DataBase Management System)</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <br><br>
-      <div class="qualification__container container grid services__container">
-        <div class="qualification__tabs">
-          <div class="qualification__button button--flex qualification__active" data-target="#education">
-            <i class="fa fa-trophy"></i>Awards
-          </div>
-        </div>
-
-        <div class="qualification__sections">
-          <!--====== Qualification Content 1 ======-->
-          <div class="qualification__content qualifiation__active services__content" data-content id="education">
-            <!--====== Award 1 ======-->
-            <div class="qualification__data">
-              <div>
-                <h3 class="qualification__title">Diploma for the Best Student - Bachelor's 1st & 2nd Year</h3>
-                <span class="qualification__subtitle">Virtual University of Côte d'Ivoire
-                  <br> Abidjan, Côte d'Ivoire</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i>
-                  2021 - 2022
-                </div>
-                <!-- <span class="button button--flex button--small button--link services__button">
-                  View More
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </span>
-                <div class="services__modal">
-                  <div class="services__modal-content">
-                    <h4 class="services__modal-title">
-                      Bachelor's Degree Summary :
-                    </h4>
-                    <i class="uil uil-times services__modal-close"></i>
-                    <ul class="services__modal-services grid">
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p>
-                          &nbsp; Web Application Development: PHP, Laravel, sql, JavaScript, CSS, HTML, Bootstrap
-                        </p>
-                      </li>
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p> &nbsp; Algorithms, OS, DBMS (DataBase Management System)</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div> -->
-
-              </div>
-
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-            </div>
-
-            <!--====== Qualification 2 ======-->
-            <div class="qualification__data">
-              <div></div>
-
-              <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
-              </div>
-              <div>
-                <h3 class="qualification__title">Top Prize, 1st in the Bachelor's Class of 2021-2022</h3>
-                <span class="qualification__subtitle">Virtual University of Côte d'Ivoire<br /> Abidjan, Côte
-                  d'Ivoire</span>
-                <div class="qualification__calender">
-                  <i class="uil uil-calendar-alt"></i>
-                  2021 - 2022
-                </div>
-                <!-- <span class="button button--flex button--small button--link services__button">
-                  View More
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </span>
-                <div class="services__modal">
-                  <div class="services__modal-content">
-                    <h4 class="services__modal-title">
-                      Bachelor's Degree Summary :
-                    </h4>
-                    <i class="uil uil-times services__modal-close"></i>
-                    <ul class="services__modal-services grid">
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p>
-                          &nbsp; Web Application Development: PHP, Laravel, sql, JavaScript, CSS, HTML, Bootstrap
-                        </p>
-                      </li>
-                      <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__moda-icon"></i>
-                        <p> &nbsp; Algorithms, OS, DBMS (DataBase Management System)</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--=================== Portfolio ===================-->
+    <!--=================== Projets ===================-->
     <section class="portfolio section" id="portfolio">
-      <h2 class="section__title">Projects</h2>
-      <span class="section__subtitle">Most recent work</span>
+      <span class="section__kicker">Mes réalisations</span>
+      <h2 class="section__title"><i class="uil uil-scenery" aria-hidden="true"></i> Projets</h2>
+      <p class="section__subtitle">Travaux récents</p>
 
       <div class="portfolio__container container swiper-container">
         <div class="swiper-wrapper">
-       
-
-       
-          <!-- ------------------------portfollio 4-------------------- -->
+          <!-- Projet 1 -->
           <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio4.png" class="portfolio__img" />
+            <img src="assets/img/project-autolink-ci.jpg" alt="Aperçu du site AutoLink CI, marketplace automobile"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
 
             <div class="portfolio__data">
-              <h3 class="portfolio__title">Ivomy - Digital Web Agency </h3>
+              <h3 class="portfolio__title">AutoLink CI — Marketplace automobile</h3>
               <p class="portfolio__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quas facere nihil amet quis illo
-                vel, dicta facilis placeat quibusdam. Quaerat accusantium, ullam alias nesciunt eum omnis labore id
-                minus.
+                Plateforme qui met en relation acheteurs et prestataires automobiles vérifiés : annonces de véhicules,
+                espace partenaire et back-office d'administration.
               </p>
-              <a href=""
-                class="button button--flex button--small portfolio__button">
-                GitHub Repository
-                <i class="uil uil-external-link-alt button__icon"></i>
-              </a>
-              <a href=""
-                class="button button--flex button--small portfolio__button">
-                See Live
-                <i class="uil uil-external-link-alt button__icon"></i>
-              </a>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/AutoLink-CI" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/AutoLink-CI/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/project-ivoirecakes.jpg" alt="Aperçu du site IvoireCakes, pâtisserie artisanale en ligne"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">IvoireCakes — Pâtisserie en ligne</h3>
+              <p class="portfolio__description">
+                Boutique de pâtisserie artisanale : le client choisit son gâteau, le personnalise puis envoie sa
+                commande via WhatsApp, avec livraison à Abidjan et partout en Côte d'Ivoire.
+              </p>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/IvoireCakes" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/IvoireCakes/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/project-ivomy.jpg" alt="Aperçu du site Ivomy, agence web digitale"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Ivomy — Agence web digitale</h3>
+              <p class="portfolio__description">
+                Site vitrine moderne et responsive pour une agence web : présentation des services (e-commerce, blogs,
+                magazines interactifs, sites institutionnels et sur mesure) et mise en avant du savoir-faire. Réalisé
+                en HTML, CSS et Bootstrap 5.
+              </p>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/Ivomy" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/Ivomy/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/project-we-love-com.jpg" alt="Aperçu du site We Love Com, agence web et marketing digital"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">We Love Com — Agence digitale</h3>
+              <p class="portfolio__description">
+                Site vitrine d'agence orienté conversion : présentation des services, réalisations et appels à
+                l'action. Réalisé en HTML, CSS, JavaScript et Bootstrap 5.
+              </p>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/We-Love-Com-" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/We-Love-Com-/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/project-mayeagency.jpg" alt="Aperçu du site MAYEAGENCY, site vitrine d'agence"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">MAYEAGENCY — Site vitrine</h3>
+              <p class="portfolio__description">
+                Site vitrine pour une agence : présentation des services et des objectifs clients, dans un design
+                moderne et responsive. Réalisé en HTML, CSS et Bootstrap.
+              </p>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/MAYEAGENCY" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/MAYEAGENCY/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/project-garba-can.jpg" alt="Aperçu du site Garba CAN, projet événementiel"
+              class="portfolio__img" width="1000" height="625" decoding="async" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Garba CAN — Projet collaboratif</h3>
+              <p class="portfolio__description">
+                Site événementiel autour du Garba pendant la CAN, conçu en collaboration avec mes apprenants durant
+                leur stage pratique. HTML, CSS et design responsive.
+              </p>
+
+              <div class="portfolio__actions">
+                <a href="https://github.com/leCoderon/Garba-CAN" target="_blank" rel="noopener"
+                  class="button button--outline button--small button--flex">
+                  Dépôt GitHub<i class="uil uil-github-alt button__icon" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://lecoderon.github.io/Garba-CAN/" target="_blank" rel="noopener"
+                  class="button button--small button--flex">
+                  Voir le site<i class="uil uil-external-link-alt button__icon" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- add arrows -->
-        <div class="swiper-button-next">
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+        <div class="swiper-button-next" aria-label="Projet suivant">
+          <i class="uil uil-angle-right-b swiper-portfolio-icon" aria-hidden="true"></i>
         </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+        <div class="swiper-button-prev" aria-label="Projet précédent">
+          <i class="uil uil-angle-left-b swiper-portfolio-icon" aria-hidden="true"></i>
         </div>
-        <!-- add pagination -->
         <div class="swiper-pagination"></div>
       </div>
     </section>
 
-    <!--===================== Contact Me =====================-->
+    <!--===================== Contact =====================-->
     <section class="contact section" id="contact">
-      <h2 class="section__title">Contact Me</h2>
-      <span class="section__subtitle">Get in touch</span>
+      <span class="section__kicker">Restons en contact</span>
+      <h2 class="section__title"><i class="uil uil-message" aria-hidden="true"></i> Contact</h2>
+      <p class="section__subtitle">Une question ? Écrivez-moi</p>
 
       <div class="contact__container container grid">
-        <div>
-          <div class="contact__information">
-            <i class="uil uil-calling contact__icon"></i>
-
+        <div class="contact__info">
+          <a href="tel:+2250584784581" class="contact__information">
+            <i class="uil uil-calling contact__icon" aria-hidden="true"></i>
             <div>
-              <h3 class="contact__title">Contact Me</h3>
-              <span class="contact__subtitle"><a href="tel:6362243314"></a>+225 0584784581</span>
+              <h3 class="contact__title">Téléphone</h3>
+              <span class="contact__subtitle">+225 05 84 78 45 81</span>
             </div>
-          </div>
+          </a>
 
-          <div class="contact__information">
-            <i class="uil uil-envelope-minus contact__icon"></i>
-
+          <a href="mailto:camara9ismael@gmail.com" class="contact__information">
+            <i class="uil uil-envelope-minus contact__icon" aria-hidden="true"></i>
             <div>
               <h3 class="contact__title">Email</h3>
               <span class="contact__subtitle">camara9ismael@gmail.com</span>
             </div>
-          </div>
+          </a>
 
           <div class="contact__information">
-            <i class="uil uil-map-marker contact__icon"></i>
-
+            <i class="uil uil-map-marker contact__icon" aria-hidden="true"></i>
             <div>
-              <h3 class="contact__title">Location</h3>
+              <h3 class="contact__title">Localisation</h3>
               <span class="contact__subtitle">Abobo, Abidjan, Côte d'Ivoire</span>
             </div>
           </div>
+
+          <a href="https://wa.me/2250584784581?text=Bonjour%20Ismael%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
+            target="_blank" rel="noopener" class="button button--whatsapp button--flex">
+            <i class="uil uil-whatsapp button__icon" aria-hidden="true"></i>Discutons sur WhatsApp
+          </a>
         </div>
 
-        <form action="" class="contact__form grid">
+        <form action="https://formspree.io/f/VOTRE_ID" method="POST" class="contact__form grid" id="contact-form">
           <div class="contact__inputs grid">
             <div class="contact__content">
-              <label for="" class="content__label">Name</label>
-              <input type="text" class="contact__input" />
+              <label for="name" class="contact__label">Nom</label>
+              <input type="text" id="name" name="name" class="contact__input" autocomplete="name" required />
             </div>
 
             <div class="contact__content">
-              <label for="" class="content__label">Email</label>
-              <input type="Email" class="contact__input" />
+              <label for="email" class="contact__label">Email</label>
+              <input type="email" id="email" name="email" class="contact__input" autocomplete="email" required />
             </div>
           </div>
 
           <div class="contact__content">
-            <label for="" class="content__label">Message</label>
-            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+            <label for="message" class="contact__label">Message</label>
+            <textarea id="message" name="message" rows="7" class="contact__input" required></textarea>
           </div>
 
-          <div>
-            <a href=" mailto: camara9ismael@gmail.com?subject=Testing out mailto! &body=This is only a test!"
-              class="button button--flex">
-              Send Message
-              <i class="uil uil-message button__icon"></i>
-            </a>
+          <input type="text" name="_gotcha" class="contact__honeypot" tabindex="-1" autocomplete="off"
+            aria-hidden="true" />
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio" />
+
+          <div class="contact__submit">
+            <button type="submit" class="button button--flex" id="contact-submit">
+              Envoyer le message<i class="uil uil-message button__icon" aria-hidden="true"></i>
+            </button>
+            <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
           </div>
         </form>
       </div>
     </section>
   </main>
 
-  <!--================== Footer ===============-->
+  <!--================== Pied de page ===============-->
   <footer class="footer">
-    <div class="footer__bg">
-      <div class="footer__container container grid">
-        <div>
-          <h1 class="footer__title">Ismael.C</h1>
-          <span class="footer__subtitle">Full Stack Web Developper</span>
-        </div>
-
-        <ul class="footer__links">
-          <li>
-            <a href="#qualification" class="footer__link">Qualification</a>
-          </li>
-          <li>
-            <a href="#portfolio" class="footer__link">Portfolio</a>
-          </li>
-          <li>
-            <a href="#portofolio" class="footer__link">Projects</a>
-          </li>
-          <li>
-            <a href="#contact" class="footer__link">Contact-Me</a>
-          </li>
-        </ul>
-
-        <div class="footer__socials">
-          <a href="" class="footer__social" target="__blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="" class="footer__social" target="__blank">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-
-          <a href="" __blank" class="footer__social">
-            <i class="fa-brands fa-x-twitter"></i>
-            <a href="" __blank" class="footer__social">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-        </div>
+    <div class="footer__container container grid">
+      <div class="footer__brand">
+        <a href="#home" class="footer__title">Ismael Camara</a>
+        <span class="footer__subtitle">Développeur Full Stack Web</span>
       </div>
 
-      <p class="footer__copy">&#169; Ismael Camara. All right reserved</p>
+      <ul class="footer__links">
+        <li><a href="#about" class="footer__link">À propos</a></li>
+        <li><a href="#skills" class="footer__link">Compétences</a></li>
+        <li><a href="#qualification" class="footer__link">Parcours</a></li>
+        <li><a href="#portfolio" class="footer__link">Projets</a></li>
+        <li><a href="#contact" class="footer__link">Contact</a></li>
+      </ul>
+
+      <div class="footer__socials">
+        <a href="https://github.com/leCoderon" target="_blank" rel="noopener" class="footer__social"
+          aria-label="GitHub">
+          <i class="uil uil-github-alt" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/isma%C3%ABl-camara-stage-developpeur-web-abidjan" target="_blank"
+          rel="noopener" class="footer__social" aria-label="LinkedIn">
+          <i class="uil uil-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:camara9ismael@gmail.com" class="footer__social" aria-label="Envoyer un email">
+          <i class="uil uil-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/2250584784581" target="_blank" rel="noopener" class="footer__social"
+          aria-label="WhatsApp">
+          <i class="uil uil-whatsapp" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
+
+    <p class="footer__copy">&#169; <span id="year">2026</span> Ismael Camara. Tous droits réservés.</p>
   </footer>
 
-  <!--================== SCROLL TOP ==================-->
-  <a href="#" class="scrollup" id="scroll-up">
-    <i class="uil uil-arrow-up scrollup__icon"></i>
-  </a>
+  <!--================== Retour en haut ==================-->
+  <button type="button" class="scrollup" id="scroll-up" aria-label="Revenir en haut de la page">
+    <i class="uil uil-arrow-up scrollup__icon" aria-hidden="true"></i>
+  </button>
 
-  <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+  <script src="assets/swiper-bundle.min.js"></script>
   <script src="assets/ptj.js"></script>
 </body>
 

@@ -122,28 +122,20 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeAllModals();
 });
 
-/*==================== CARROUSEL PROJETS ====================*/
-const portfolioContainer = document.querySelector(".portfolio__container");
+/*======================= Portfolio Swiper ===================*/
+var swiper = new Swiper(".portfolio__container", {
+  cssMode: true,
+  loop: true,
 
-if (portfolioContainer && typeof Swiper !== "undefined") {
-  const slides = portfolioContainer.querySelectorAll(".swiper-slide");
-  const isSingleSlide = slides.length <= 1;
-
-  new Swiper(portfolioContainer, {
-    cssMode: true,
-    loop: !isSingleSlide,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-
-  if (isSingleSlide) portfolioContainer.classList.add("single-slide");
-}
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 /*==================== LIEN ACTIF AU DÉFILEMENT ====================*/
 const sections = document.querySelectorAll("section[id]");
@@ -182,6 +174,12 @@ function onScroll() {
 
   if (header) header.classList.toggle("scroll-header", scrollY >= 80);
   if (scrollUpButton) scrollUpButton.classList.toggle("show-scroll", scrollY >= 560);
+}
+
+if (scrollUpButton) {
+  scrollUpButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 window.addEventListener("scroll", onScroll, { passive: true });
@@ -249,10 +247,33 @@ if (contactForm && contactStatus && contactSubmit) {
     }
 
     const action = contactForm.getAttribute("action") || "";
+
+    /* Repli WhatsApp tant qu'aucun identifiant Formspree n'est configuré. */
     if (action.includes("VOTRE_ID")) {
+      const data = new FormData(contactForm);
+      const whatsappButton = document.querySelector(".button--whatsapp");
+      const whatsappBase = whatsappButton
+        ? whatsappButton.href.split("?")[0]
+        : "https://wa.me/2250584784581";
+
+      const text = [
+        "Bonjour Ismael, je vous contacte depuis votre portfolio.",
+        "",
+        "Nom : " + data.get("name"),
+        "Email : " + data.get("email"),
+        "",
+        "Message :",
+        data.get("message"),
+      ].join("\r\n");
+
+      const whatsappUrl = whatsappBase + "?text=" + encodeURIComponent(text);
+      const opened = window.open(whatsappUrl, "_blank", "noopener");
+
+      if (!opened) window.location.href = whatsappUrl;
+
       contactStatus.textContent =
-        "Formulaire non configuré : remplacez « VOTRE_ID » par votre identifiant Formspree.";
-      contactStatus.className = "contact__status is-error";
+        "WhatsApp s'ouvre avec votre message pré-rempli. Vous pouvez aussi écrire à camara9ismael@gmail.com.";
+      contactStatus.className = "contact__status is-success";
       return;
     }
 

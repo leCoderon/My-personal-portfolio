@@ -14,7 +14,7 @@ Le site est construit en **HTML, CSS et JavaScript vanilla** — sans framework 
 - **À propos** : parcours, chiffres clés et téléchargement du CV.
 - **Compétences** : accordéon de 4 catégories (langages, concepts informatiques, technologies, outils) avec barres de progression.
 - **Parcours** : onglets *Formation* et *Distinctions* sous forme de timeline, avec modales « Voir plus ».
-- **Projets** : carrousel (Swiper) présentant les réalisations, avec liens vers le dépôt et le site en ligne.
+- **Projets** : carrousel (Swiper) présentant les réalisations, avec liens vers le dépôt et la démo.
 - **Contact** : coordonnées cliquables, bouton WhatsApp et formulaire fonctionnel via Formspree.
 - **Thème clair / sombre** : bascule mémorisée dans le navigateur (`localStorage`).
 - **Design responsive** : mobile, tablette et desktop, avec animations d'apparition au défilement.
@@ -33,6 +33,7 @@ Le site est construit en **HTML, CSS et JavaScript vanilla** — sans framework 
 ```
 portfolio-camara-ismael/
 ├── index.html                  # Page unique (toutes les sections)
+├── CV_Ismael_Camara_Développeur_Web.pdf  # CV téléchargeable
 ├── preview.png                 # Image d'aperçu
 ├── README.md
 └── assets/
@@ -40,10 +41,11 @@ portfolio-camara-ismael/
     ├── ptj.js                  # Script principal
     ├── swiper-bundle.min.css
     ├── swiper-bundle.min.js
-    ├── Camara_Ismael_CV.pdf    # CV téléchargeable
+    ├── documents/              # Diplômes et certificats (PDF)
     └── img/
-        ├── Pro.jpg             # Photo de profil
-        ├── project-*.jpg       # Captures des projets (Ivomy, AutoLink CI, IvoireCakes, …)
+        ├── photo-profil.jpg    # Photo de profil
+        ├── project-*.jpg       # Captures des projets du carrousel
+        ├── portfolio4.png      # Aperçu du projet Ivomy
         └── favicon.svg         # Favicon
 ```
 
@@ -64,7 +66,7 @@ Le formulaire utilise [Formspree](https://formspree.io/) pour envoyer les messag
 2. Copier l'identifiant fourni (de la forme `https://formspree.io/f/xxxxxxx`).
 3. Dans `index.html`, remplacer `VOTRE_ID` dans l'attribut `action` du formulaire `#contact-form`.
 
-Tant que l'identifiant n'est pas renseigné, un message d'aide s'affiche à la soumission.
+Tant que l'identifiant n'est pas renseigné, le formulaire bascule automatiquement sur **WhatsApp** : il ouvre une conversation avec le message pré-rempli (nom, email et message du visiteur).
 
 ## Personnalisation
 
@@ -81,7 +83,7 @@ Le site étant entièrement statique, il peut être publié tel quel sur **GitHu
 - Email : <camara9ismael@gmail.com>
 - Téléphone / WhatsApp : +225 05 84 78 45 81
 - GitHub : <https://github.com/leCoderon>
-- LinkedIn : <https://www.linkedin.com/in/isma%C3%ABl-camara-stage-developpeur-web-abidjan>
+- LinkedIn : <https://www.linkedin.com/in/isma%C3%ABl-camara-stage-developpeur-laravel-php-fullstack-developper-backend-frontent-abidjan/>
 
 ---
 

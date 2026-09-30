@@ -1,6 +1,6 @@
 # Portfolio personnel — Ismael Camara
 
-Site portfolio personnel de **Camara Ismael**, développeur full stack web (Abidjan, Côte d'Ivoire).
+Site portfolio personnel de **Camara Ismael**, développeur full stack IA (Abidjan, Côte d'Ivoire).
 
 Le site est construit en **HTML, CSS et JavaScript vanilla** — sans framework ni étape de build — et se déploie en quelques secondes sur n'importe quel hébergeur statique.
 

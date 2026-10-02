@@ -30,8 +30,25 @@ navLinks.forEach((link) => {
 /*==================== ACCORDÉON COMPÉTENCES ====================*/
 const skillsContent = document.querySelectorAll(".skills__content");
 const skillsHeader = document.querySelectorAll(".skills__header");
+const skillsDesktop = window.matchMedia("(min-width: 768px)");
+
+/* Sur grand écran, toutes les catégories restent dépliées et l'accordéon est inactif. */
+function applySkillsLayout() {
+  const isDesktop = skillsDesktop.matches;
+
+  skillsContent.forEach((content, index) => {
+    const header = content.querySelector(".skills__header");
+    const isOpen = isDesktop || index === 0;
+
+    content.classList.toggle("skills__open", isOpen);
+    content.classList.toggle("skills__close", !isOpen);
+    if (header) header.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
 function toggleSkills() {
+  if (skillsDesktop.matches) return;
+
   const parent = this.parentNode;
   const isClosed = parent.classList.contains("skills__close");
 
@@ -52,6 +69,9 @@ function toggleSkills() {
 skillsHeader.forEach((header) => {
   header.addEventListener("click", toggleSkills);
 });
+
+applySkillsLayout();
+skillsDesktop.addEventListener("change", applySkillsLayout);
 
 /*==================== ONGLETS PARCOURS ====================*/
 const tabs = document.querySelectorAll("[data-target]");

@@ -503,6 +503,23 @@ button {
   margin-bottom: var(--mb-1);
 }
 
+.home__handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: calc(-1 * var(--mb-0-5));
+  margin-bottom: var(--mb-0-75);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.home__handle:hover {
+  color: var(--first-color-alt);
+  transform: translateY(-2px);
+}
+
 .home__description {
   margin-bottom: var(--mb-2);
   max-width: 46ch;

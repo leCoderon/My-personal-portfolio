@@ -33,7 +33,7 @@ Le site est construit en **HTML, CSS et JavaScript vanilla** — sans framework 
 ```
 portfolio-camara-ismael/
 ├── index.html                  # Page unique (toutes les sections)
-├── CV_Ismael_Camara_Développeur_Web.pdf  # CV téléchargeable
+├── CV_Ismael_Camara_Developpeur_FullStack_IA.pdf  # CV téléchargeable
 ├── preview.png                 # Image d'aperçu
 ├── README.md
 └── assets/
@@ -45,7 +45,6 @@ portfolio-camara-ismael/
     └── img/
         ├── photo-profil.jpg    # Photo de profil
         ├── project-*.jpg       # Captures des projets du carrousel
-        ├── portfolio4.png      # Aperçu du projet Ivomy
         └── favicon.svg         # Favicon
 ```
 

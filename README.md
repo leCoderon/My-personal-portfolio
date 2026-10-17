@@ -6,6 +6,12 @@ Portfolio de développeur full stack IA : profil, compétences, parcours et proj
 ![Langage](https://img.shields.io/badge/langage-HTML5-E34F26?logo=html5&logoColor=white)
 ![Démo](https://img.shields.io/badge/d%C3%A9mo-GitHub%20Pages-4b4bd6)
 
+## Captures d'écran
+
+![Aperçu du portfolio](preview.png)
+
+[Ajouter ici des captures des sections Compétences, Parcours et Projets.]
+
 ## Aperçu
 
 Site portfolio personnel de **Ismael Camara**, développeur full stack IA basé à Abidjan (Côte d'Ivoire). Il regroupe en une page son positionnement professionnel, ses compétences, son parcours et ses réalisations. Il s'adresse aux recruteurs, clients et partenaires qui veulent évaluer rapidement son profil, consulter ses justificatifs et le contacter. Le site est construit en HTML, CSS et JavaScript vanilla : aucun framework, aucune étape de compilation.
@@ -106,12 +112,6 @@ Tant que l'identifiant n'est pas renseigné, l'envoi bascule automatiquement sur
 - **Thème** — le bouton de l'en-tête bascule clair/sombre et mémorise le choix dans `localStorage`.
 - **Personnalisation** — la couleur d'accent se règle via `--hue-color` dans `:root` (`assets/newcss.css`) ; les textes, projets et coordonnées s'éditent dans `index.html`.
 - **Déploiement** — publier le dossier tel quel sur GitHub Pages, Netlify ou Vercel : aucune compilation n'est requise.
-
-## Captures d'écran
-
-![Aperçu du portfolio](preview.png)
-
-[Ajouter ici des captures des sections Compétences, Parcours et Projets.]
 
 ## Roadmap
 
